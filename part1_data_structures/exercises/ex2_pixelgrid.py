@@ -20,10 +20,28 @@ class PixelGrid():
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        
+        self.grid = [[None for _ in range(width)] for _ in range(height)]
+
 
     def __repr__(self):
         pass
 
     def __getitem__(self):
         pass
+
+    def __setitem__(self, idx, value):
+        self.grid
+
+
+
+import numpy as np 
+a = np.array([[1,2,3], [2,3,4]])
+
+# print(a.shape)
+
+row = 2
+col = 3
+grid = [[1,2,3], [2,3,4]]
+
+print(grid[1])
+
