@@ -24,24 +24,18 @@ class PixelGrid():
 
 
     def __repr__(self):
-        pass
+        return f"PixelGrid({self.width}x{self.height})"
 
-    def __getitem__(self):
-        pass
+    def __getitem__(self, idx):
+        y , x = idx
+        return self.grid[x][y]
 
     def __setitem__(self, idx, value):
-        self.grid
+        y , x = idx
+        self.grid[x][y] = value
+
+    def __len__(self):
+        return len(self.grid)
 
 
-
-import numpy as np 
-a = np.array([[1,2,3], [2,3,4]])
-
-# print(a.shape)
-
-row = 2
-col = 3
-grid = [[1,2,3], [2,3,4]]
-
-print(grid[1])
 

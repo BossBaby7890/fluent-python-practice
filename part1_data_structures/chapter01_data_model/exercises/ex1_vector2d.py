@@ -62,19 +62,8 @@ class Vector2D:
     def __hash__(self):
         """Make the vector hashable."""
         return hash((self.x, self.y))
+    
+    def __len__(self):
+        return len((self.x, self.y))
 
 
-if __name__ == "__main__":
-    # Quick test cases (to try after implementation)
-    v1 = Vector2D(3, 4)
-    v2 = Vector2D(1, 2)
-
-    print("v1:", v1)
-    print("v2:", v2)
-    print("v1 + v2:", v1 + v2)
-    print("v1 - v2:", v1 - v2)
-    print("v1 * 3:", v1 * 3)
-    print("2 * v2:", 2 * v2)
-    print("abs(v1):", abs(v1))
-    print("Equality test:", v1 == Vector2D(3, 4))
-    print("Hashable test:", {v1, v2})
