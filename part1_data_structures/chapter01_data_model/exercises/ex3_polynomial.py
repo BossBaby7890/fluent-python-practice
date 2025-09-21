@@ -16,4 +16,17 @@ Example:
 """
 
 class Polynomial():
-    pass
+    def __init__(self, coefs):
+        self.coefs = coefs
+        self.order = len(self.coefs) if self.coefs[0]!= 0 else 1
+    
+    def __repr__(self):
+        return f"Polynomial()"
+    
+    def __call__(self, x):
+        total = 0
+        for i in range(self.order + 1):
+            pass
+
+
+    
