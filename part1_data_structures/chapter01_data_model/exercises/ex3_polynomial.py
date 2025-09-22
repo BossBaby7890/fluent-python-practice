@@ -21,12 +21,27 @@ class Polynomial():
         self.order = len(self.coefs) if self.coefs[0]!= 0 else 1
     
     def __repr__(self):
-        return f"Polynomial()"
+        variables = ["" if i ==0 else "x" if i == 1 else f"x^{i}" for i in range(self.order)]
+        expression = [f"{coeff}{vari}" for coeff, vari in zip(self.coefs, variables)]
+        final_expression = "+".join(expression)
+        return f"Polynomial(" + final_expression + ")"
     
     def __call__(self, x):
-        total = 0
-        for i in range(self.order + 1):
-            pass
-
-
+        y = 0
+        for i in range(self.order):
+            y += self.coefs[i] * (x**i)
+        return y
     
+    def __add__(self, other):
+        max_order = max(self.order, other.order)
+
+        self_padded = self.coefs + [0] * (max_order - self.order)
+        other_padded = other.coefs + [0] * (max_order - other.order)
+
+        total = [x + y for x, y in zip(self_padded, other_padded)]
+
+        return Polynomial(total)
+    
+    def __eq__(self, other):
+        return isinstance(other, Polynomial) and self.coefs == other.coefs
+
