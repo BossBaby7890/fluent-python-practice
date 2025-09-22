@@ -10,7 +10,7 @@ def test_polynomial_addition():
     p1 = Polynomial([1, 3, 2])   # 2x² + 3x + 1
     p2 = Polynomial([0, 1])      # x
     result = p1 + p2
-    assert result.coeffs == [1, 4, 2]
+    assert result == Polynomial([1, 4, 2])
 
 def test_polynomial_equality():
     p1 = Polynomial([1, 2, 3])
